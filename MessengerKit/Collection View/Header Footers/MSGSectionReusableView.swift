@@ -14,7 +14,7 @@ open class MSGSectionReusableView: UICollectionReusableView {
     
     open var message: MSGMessage?
     
-    open var title: String?
+    open var title: NSAttributedString?
     
     open weak var delegate: MSGSectionReusableViewDelegate?
     

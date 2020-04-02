@@ -21,9 +21,9 @@ class MSGImessageHeaderView: MSGSectionReusableView {
         }
     }
     
-    override var title: String? {
+    override var title: NSAttributedString? {
         didSet {
-            label.text = title
+            label.attributedText = title
         }
     }
     

@@ -12,9 +12,9 @@ class MSGTravCollectionViewSectionHeader: MSGSectionReusableView {
     
     @IBOutlet weak var label: UILabel!
     
-    override var title: String? {
+    override var title: NSAttributedString? {
         didSet {
-            label.text = title
+            label.attributedText = title
         }
     }
     

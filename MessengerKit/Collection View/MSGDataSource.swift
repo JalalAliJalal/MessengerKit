@@ -37,13 +37,13 @@ public protocol MSGDataSource: NSObjectProtocol {
     ///
     /// - Parameter section: The index of the section the footer is being rendered for.
     /// - Returns: The title that should be displayed
-    func footerTitle(for section: Int) -> String?
+    func footerTitle(for section: Int) -> NSAttributedString?
     
     /// The text that should be displayed in a label in the section header.
     /// This may not be displayed on all styles.
     ///
     /// - Parameter section: The index of the section the header is being rendered for.
     /// - Returns: The title that should be displayed.
-    func headerTitle(for section: Int) -> String?
+    func headerTitle(for section: Int) -> NSAttributedString?
     
 }
