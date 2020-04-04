@@ -122,6 +122,14 @@ class CustomStyleViewController: MSGMessengerViewController {
 // MARK: - MSGDataSource
 
 extension CustomStyleViewController: MSGDataSource {
+    func footerTitle(for section: Int) -> NSAttributedString? {
+        return NSAttributedString(string: "footer")
+    }
+    
+    func headerTitle(for section: Int) -> NSAttributedString? {
+        return NSAttributedString(string: "header")
+    }
+    
     
     func numberOfSections() -> Int {
         return messages.count

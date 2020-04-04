@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension MSGMessengerViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching, MSGSectionReusableViewDelegate {
+extension MSGMessengerViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSourcePrefetching, MSGSectionReusableViewDelegate {
     
     // MARK: - DataSource
     
@@ -21,7 +21,6 @@ extension MSGMessengerViewController: UICollectionViewDataSource, UICollectionVi
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let message = dataSource?.message(for: indexPath) else {
             fatalError("Message not defined for \(indexPath)")
         }
@@ -187,6 +186,12 @@ extension MSGMessengerViewController: UICollectionViewDataSource, UICollectionVi
             
         }
         
+    }
+    
+    public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if (collectionView.contentOffset.y + collectionView.safeAreaInsets.top) <= 0.0 {
+            delegate?.didScrollToTop()
+        }
     }
     
     public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {

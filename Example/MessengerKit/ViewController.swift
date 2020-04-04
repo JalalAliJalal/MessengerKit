@@ -143,6 +143,14 @@ extension ViewController {
 // MARK: - MSGDataSource
 
 extension ViewController: MSGDataSource {
+    func footerTitle(for section: Int) -> NSAttributedString? {
+        return NSAttributedString(string: "footer")
+    }
+    
+    func headerTitle(for section: Int) -> NSAttributedString? {
+        return NSAttributedString(string: "header")
+    }
+    
     
     func numberOfSections() -> Int {
         return messages.count
@@ -194,4 +202,7 @@ extension ViewController: MSGDelegate {
         return true
     }
     
+    func didScrollToTop() {
+        print("called")
+    }
 }

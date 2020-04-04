@@ -9,6 +9,7 @@
 import MessengerKit
 
 struct CustomStyle: MSGMessengerStyle {
+    var inputTextViewBackgroundColor: UIColor = .black
     
     var collectionView: MSGCollectionView.Type = CustomCollectionView.self
     
