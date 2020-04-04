@@ -47,6 +47,9 @@ public protocol MSGDelegate: NSObjectProtocol {
     /// - Returns: Whether the URL should be opened or not
     func shouldOpen(url: URL) -> Bool
     
+    /// Tells the delegate that UIScrollView did scroll to top
+    func didScrollToTop()
+    
 }
 
 extension MSGDelegate {
@@ -62,5 +65,7 @@ extension MSGDelegate {
     public func shouldDisplaySafari(for url: URL) -> Bool { return true }
     
     public func shouldOpen(url: URL) -> Bool { return true }
+    
+    public func didScrollToTop() {}
     
 }

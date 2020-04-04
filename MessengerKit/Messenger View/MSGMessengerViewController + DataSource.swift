@@ -189,6 +189,10 @@ extension MSGMessengerViewController: UICollectionViewDataSource, UICollectionVi
         
     }
     
+    public func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        delegate?.didScrollToTop()
+    }
+    
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         guard style.headerHeight > 0 else {
             return .zero
